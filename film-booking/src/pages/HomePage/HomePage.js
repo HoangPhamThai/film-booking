@@ -1,10 +1,11 @@
 import React from "react";
-import List from "./TabMovie/List";
+
 import TabMovie from "./TabMovie/TabMovie";
+import ListMovie from "./ListMovie";
 export default function HomePage() {
   return (
     <div className="container">
-      <List />
+      <ListMovie />
       <TabMovie />
     </div>
   );
