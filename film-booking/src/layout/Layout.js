@@ -10,7 +10,6 @@ export default function Layout() {
       <Header />
       <Outlet />
       <FooterFlix />
-      {/* outlet ~ route con của route cha */}
     </div>
   );
 }
