@@ -5,3 +5,5 @@ export const routePath = {
     ticketBooking: '/booking',
     login: '/login',
 }
+
+

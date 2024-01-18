@@ -12,11 +12,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path={routePath.home} element={<HomeTemplate />}>
-          <Route path={routePath.ticketBooking} element={<Home />} />
+          <Route path={routePath.home} element={<Home />} />
           <Route path={routePath.ticketBooking} element={<TicketBooking />} />
         </Route>
+        <Route path={routePath.admin} element={<Admin />}></Route>
       </Routes>
-      <Route path={routePath.admin} element={<Admin />}></Route>
     </BrowserRouter>
   );
 }
