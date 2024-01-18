@@ -1,4 +1,3 @@
-// axios instance
 
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -14,17 +13,16 @@ export let https = axios.create({
       "bearer " + JSON.parse(localStorage.getItem("USER_INFOR"))?.accessToken,
   },
 });
-// useDispatch();
-// Add a request interceptor
+
 https.interceptors.request.use(
   function (config) {
     store.dispatch(setLoadingOn());
-    console.log("request đi");
-    // Do something before request is sent
+    
+    
     return config;
   },
   function (error) {
-    // Do something with request error
+    
     return Promise.reject(error);
   }
 );
@@ -34,16 +32,11 @@ https.interceptors.response.use(
   function (response) {
     store.dispatch(setLoadingOff());
 
-    console.log("response về");
-    // Any status code that lie within the range of 2xx cause this function to trigger
-    // Do something with response data
     return response;
   },
   function (error) {
     store.dispatch(setLoadingOff());
 
-    // Any status codes that falls outside the range of 2xx cause this function to trigger
-    // Do something with response error
     return Promise.reject(error);
   }
 );

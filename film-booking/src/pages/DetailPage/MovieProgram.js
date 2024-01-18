@@ -1,7 +1,7 @@
 import { Tabs } from "antd";
 import React, { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import { https } from "../../service/api";
+import { https } from "../../services/api";
 import moment from "moment";
 
 export default function MovieProgram() {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { https } from "../../service/api";
+import { https } from "../../services/api";
 import { Rate, message } from "antd";
 import MovieProgram from "./MovieProgram";
 

@@ -1,7 +1,8 @@
 import React from "react";
 import { Button, Form, Input, message } from "antd";
 import { NavLink, useNavigate } from "react-router-dom";
-import { https } from "../service/api";
+import { https } from "../../services/api";
+
 
 const FormRegister = () => {
   //Responsive form

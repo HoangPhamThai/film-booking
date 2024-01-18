@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { https } from "../../../service/api";
+
 import { Tabs } from "antd";
-import List from "./List";
+import List from "./list";
+import { getFilmTheaterSchedule } from "../../../constants/api_path";
+import { https } from "../../../services/api";
 
 export default function TabMovie() {
   const [dsHeThongRap, setDsHeThongRap] = useState([]);
   useEffect(() => {
     https
-      .get(`/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP01`)
+      .get(getFilmTheaterSchedule)
       .then((res) => {
         setDsHeThongRap(res.data.content);
         console.log(res.data.content);
@@ -37,7 +39,7 @@ export default function TabMovie() {
                   <p>{cumRap.diaChi}</p>
                 </div>
               ),
-              children: <List dsPhim={cumRap.danhSachPhim} />,
+              children: <List listFilm={cumRap.danhSachPhim} />,
             };
           })}
         />

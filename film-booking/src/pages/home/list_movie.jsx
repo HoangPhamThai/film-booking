@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { https } from "../../service/api";
+
 import { Card, Tooltip } from "antd";
 import Meta from "antd/es/card/Meta";
 import { NavLink } from "react-router-dom";
+import { getListFilm } from "../../constants/api_path";
+import { https } from "../../services/api";
 
 export default function ListMovie() {
   const [movieArr, setMovieArr] = useState([]);
   useEffect(() => {
     https
-      .get("/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01")
+      .get(getListFilm)
       .then((res) => {
-        console.log(res);
         setMovieArr(res.data.content);
         // card atnd
       })
@@ -18,7 +19,7 @@ export default function ListMovie() {
         console.log(err);
       });
   }, []);
-  // min width : mobie first
+
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-5">
       {movieArr.slice(0, 20).map((item) => {
@@ -44,7 +45,7 @@ export default function ListMovie() {
               to={`/detail/${item.maPhim}`}
               className="bg-red-600 px-5 py-2 rounded text-white text-xl font-bold block mt-5 text-center"
             >
-              CHI TIẾT
+              Xem phim
             </NavLink>
           </Card>
         );
