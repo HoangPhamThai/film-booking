@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Checkbox, Form, Input, message } from "antd";
 import { https } from "../../service/api";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/userSlice";
 // Test@13000
@@ -83,6 +83,9 @@ const FormLogin = () => {
       >
         <Button className="bg-orange-400" htmlType="submit">
           Submit
+        </Button>
+        <Button className="bg-orange-400" htmlType="submit">
+          <Link to="/register">Create New Account</Link>
         </Button>
       </Form.Item>
     </Form>
