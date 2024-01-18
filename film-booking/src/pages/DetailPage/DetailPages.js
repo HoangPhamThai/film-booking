@@ -1,38 +1,81 @@
-import React, { useEffect, useState} from "react";
-import { useParams } from "react-router-dom"
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { https } from "../../service/api";
-import { Rate } from "antd"
-export default function DetailPages() {
-    const [detail , setDetail] = useState();
-    const [isLoading ,setIsLoading] = useState(false);
+import { Rate, message } from "antd";
+import MovieProgram from "./MovieProgram";
 
-let { maPhim } = useParams();
-useEffect(()=>{
+export default function DettailPage() {
+  const [messageApi, contextHolder] = message.useMessage();
+  const info = () => {
+    messageApi.info("Vui lòng chọn khung giờ chiếu phù hợp !");
+  };
+
+  //Lấy mã phim từ URL
+  let { maPhim } = useParams();
+
+  const [detail, setDetail] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
     setIsLoading(true);
-    https
-        .get(`QuanLyPhim/LayThongTinPhim?MaPhim=${maPhim}`)
-        .then((res) => {
-            setIsLoading(false);
-            console.log(res);
-            setDetail(res.data.content)
-        })
-        .catch((err) => {
-          setIsLoading(false);
-          console.log(err);
-        });
-    }, []);
 
-    return (
-        <div className="container flex items-center space-x-5">
-          {/* {isLoading && <Spinner />} */}
-          <img className="w-64 h-96 rounded shadow-lg shadow-red-600" src={detail?.hinhAnh} alt="" />
-          <div className="space-y-5">
-            <h1 className="text-3xl font-medium">{detail?.tenPhim}</h1>
-            <p>{detail?.moTa}</p>
-            {/* rating antd */}
-            <Rate allowHalf value={detail?.danhGia / 2} style={{ color: "green" }} />
+    https
+      .get(`/api/QuanLyPhim/LayThongTinPhim?MaPhim=${maPhim}`)
+      .then((res) => {
+        // console.log(res.data.content);
+        setIsLoading(false);
+        setDetail(res.data.content);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        console.log(err);
+      });
+  }, []);
+
+  return (
+    <div className="py-5 detailPage">
+      <div className="containerCss">
+        <h1 className="text-3xl font-medium">Nội Dung Phim</h1>
+        <hr className="bold-hr" />
+      </div>
+
+      <div className="containerCss pt-5 flex space-x-5">
+        <img
+          className="h-80 rounded shadow-lg shadow-black"
+          src={detail.hinhAnh}
+          alt=""
+        />
+
+        <div className="space-y-1">
+          <h1 className="text-3xl mb-5 form-medium">{detail.tenPhim}</h1>
+          <p>
+            <b>Mã Phim:</b> {detail.maPhim}
+          </p>
+          <p>
+            <b>Mô tả:</b> {detail.moTa}
+          </p>
+          <p>
+            <b>Thời gian chiếu:</b> {detail.ngayKhoiChieu}
+          </p>
+          <p>
+            <b>Trailer:</b> {detail.trailer}
+          </p>
+          <p>
+            <b>Rate:</b> <Rate value={detail.danhGia} />
+          </p>
+          <div>
+            {contextHolder}
+            <button
+              className="bg-blue-500 text-white rounded px-5 py-1 font-normal text-xl mt-5"
+              onClick={info}
+            >
+              Mua vé
+            </button>
           </div>
         </div>
-      );
-    
+      </div>
+
+      <MovieProgram />
+    </div>
+  );
 }
