@@ -3,13 +3,13 @@
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { store } from "../index";
-import { setLoadingOff, setLoadingOn } from "../component/redux/spinnerSlice";
+import { setLoadingOff, setLoadingOn } from "../redux/spinnerSlice";
 
 export let https = axios.create({
-  baseURL: "https://movienew.cybersoft.edu.vn",
+  baseURL: "https://movienew.cybersoft.edu.vn/",
   headers: {
     TokenCybersoft:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA1NCIsIkhldEhhblN0cmluZyI6IjE0LzA1LzIwMjQiLCJIZXRIYW5UaW1lIjoiMTcxNTY0NDgwMDAwMCIsIm5iZiI6MTY4NzcxMjQwMCwiZXhwIjoxNzE1NzkyNDAwfQ.cy8EAM6hrKh2o6c9THZW5lrKeOEmQXIDgFVyIf7K_rU",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA1OCIsIkhldEhhblN0cmluZyI6IjExLzA2LzIwMjQiLCJIZXRIYW5UaW1lIjoiMTcxODA2NDAwMDAwMCIsIm5iZiI6MTY5MDM5MDgwMCwiZXhwIjoxNzE4MjExNjAwfQ.631rl3EwTQfz6CuufNTJlys36XLVmoxo29kP-F_PDKU",
     Authorization:
       "bearer " + JSON.parse(localStorage.getItem("USER_INFOR"))?.accessToken,
   },

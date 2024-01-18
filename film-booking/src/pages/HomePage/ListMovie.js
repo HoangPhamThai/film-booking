@@ -44,7 +44,7 @@ export default function ListMovie() {
               to={`/detail/${item.maPhim}`}
               className="bg-red-600 px-5 py-2 rounded text-white text-xl font-bold block mt-5 text-center"
             >
-              Xem phim
+              CHI TIẾT
             </NavLink>
           </Card>
         );
