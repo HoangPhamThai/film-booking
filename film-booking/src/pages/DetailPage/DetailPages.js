@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { https } from "../../services/api";
-import { Rate, message } from "antd";
+import { Rate, message, Divider } from "antd";
 import MovieProgram from "./MovieProgram";
+import ListMovie from "../home/list_movie";
 
 export default function DettailPage() {
   const [messageApi, contextHolder] = message.useMessage();
@@ -33,9 +34,9 @@ export default function DettailPage() {
   }, []);
 
   return (
-    <div className="py-5 detailPage">
+    <div className="py-5 detailPage container">
       <div className="containerCss">
-        <h1 className="text-3xl font-medium">Nội Dung Phim</h1>
+        <h1 className="text-3xl font-bold text-gray">Nội Dung Phim</h1>
         <hr className="bold-hr" />
       </div>
 
@@ -75,7 +76,18 @@ export default function DettailPage() {
         </div>
       </div>
 
+      <div className="mt-[50px]">
       <MovieProgram />
+      </div>
+
+      <div>
+        <Divider/>
+        <div className="text-gray font-bold text-2xl mb-5">
+          Danh sách phim khác
+        </div>
+        <ListMovie/>
+      </div>
+      
     </div>
   );
 }

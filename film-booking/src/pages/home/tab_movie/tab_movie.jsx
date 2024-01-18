@@ -35,8 +35,8 @@ export default function TabMovie() {
               key: cumRap.tenCumRap,
               label: (
                 <div className="text-left w-64 truncate">
-                  <h2 className="font-medium">{cumRap.tenCumRap}</h2>
-                  <p>{cumRap.diaChi}</p>
+                  <h2 className="font-medium text-gray-400">{cumRap.tenCumRap}</h2>
+                  <p className="text-gray-400">{cumRap.diaChi}</p>
                 </div>
               ),
               children: <List listFilm={cumRap.danhSachPhim} />,
@@ -48,7 +48,7 @@ export default function TabMovie() {
   });
   // end
   return (
-    <div>
+    <div className="bg-black rounded-lg">
       <Tabs
         style={{ height: 600 }}
         tabPosition="left"

@@ -42,7 +42,7 @@ export default function FooterFlix() {
   };
 
   return (
-    <footer className="footerHome pb-5 lg:px-10">
+    <footer className="footerHome  lg:px-10 text-white mx-auto bg-slate-800 mt-[50px]">
       <div className="footer__content containerCss">
         <div className="footer__top grid grid-cols-12 py-4">
           <div className="footerTop__item col-span-4 md:col-span-12">

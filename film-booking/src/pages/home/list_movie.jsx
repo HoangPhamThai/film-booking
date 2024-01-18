@@ -25,6 +25,7 @@ export default function ListMovie() {
       {movieArr.slice(0, 20).map((item) => {
         return (
           <Card
+            className="bg-slate-800 border-none mx-3 my-3"
             key={item.maPhim}
             hoverable
             style={{
@@ -38,9 +39,7 @@ export default function ListMovie() {
               />
             }
           >
-            <Tooltip title={item.tenPhim}>
-              <Meta title={item.tenPhim} />
-            </Tooltip>
+            <div className="text-gray-300 font-medium">{item.tenPhim}</div>
             <NavLink
               to={`/detail/${item.maPhim}`}
               className="bg-red-600 px-5 py-2 rounded text-white text-xl font-bold block mt-5 text-center"

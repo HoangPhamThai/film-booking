@@ -10,7 +10,7 @@ export default function Header() {
     window.location.reload();
   };
   let renderMenu = () => {
-    let cssBtn = "rounded px-5 py-2 border-2 border-black";
+    let cssBtn = "rounded px-5 py-2 border-2 border-black text-gray-300 bg-slate-700";
     if (user) {
       // đã đăng nhập
       return (
@@ -46,7 +46,7 @@ export default function Header() {
   };
   return (
     <div className="h-24">
-      <div className="shadow-lg shadow-black fixed w-full top-0 left-0 z-50 bg-white">
+      <div className="shadow-lg shadow-black fixed w-full top-0 left-0 z-50 bg-slate-800">
         <div className="h-20 flex justify-between items-center container ">
           <NavLink to="/">
             <span className="text-2xl font-medium text-red-400">
