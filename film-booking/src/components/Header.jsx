@@ -35,7 +35,7 @@ export default function Header() {
           >
             {labelLogin}
           </Button>
-          <button className={cssBtn}>{labelSignup}</button>
+          <Button className={cssBtn}>{labelSignup}</Button>
         </>
       );
     }
