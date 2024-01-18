@@ -46,7 +46,7 @@ export default function FooterFlix() {
       <div className="footer__content containerCss">
         <div className="footer__top grid grid-cols-12 py-4">
           <div className="footerTop__item col-span-4 md:col-span-12">
-            <h2 className="item__title">TIX</h2>
+            <h2 className="item__title">KAG</h2>
             <div className="item__child grid grid-cols-2">
               <p className="child__text mb-2">FAQ</p>
               <p className="child__text mb-2">Brand Guidelines</p>
@@ -93,11 +93,11 @@ export default function FooterFlix() {
           </div>
           <div className="footerBottom__item col-span-8 md:col-span-6 md:justify-self-center md:text-center sm:col-span-12 sm:my-5">
             <h2 className="item__title">
-              TIX - SẢN PHẨM CỦA CÔNG TY CỔ PHẦN ZION
+              KIẾN AN GIA - SẢN PHẨM CỦA CÔNG TY CỔ PHẦN ZION
             </h2>
             <p className="item__text pt-3">
-              Địa chỉ: Z06 Đường số 13, Phường Tân Thuận Đông, quận 7, Tp. Hồ
-              Chí Minh, Việt Nam.
+              Địa chỉ: 17A Đặng Trần Côn, Phường Bến Thành , quận 1, Tp. Hồ Chí
+              Minh, Việt Nam.
               <br />
               Giấy chứng nhận đăng ký kinh doanh số: 0101659783,
               <br />

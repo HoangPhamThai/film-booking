@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import Layout from "./layout/Layout";
 import DetailPage from "./pages/DetailPage/DetailPages";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import RegisterPage from "./Register/RegisterPage";
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
             <Route path="/" element={<HomePage />} />
 
             <Route path="/detail/:maPhim" element={<DetailPages />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
           </Route>
-          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -32,7 +32,14 @@ export default function Header() {
           >
             Đăng nhập
           </button>
-          <button className={cssBtn}>Đăng ký</button>
+          <button
+            onClick={() => {
+              window.location.href = "/register";
+            }}
+            className={cssBtn}
+          >
+            Đăng ký
+          </button>
         </>
       );
     }
