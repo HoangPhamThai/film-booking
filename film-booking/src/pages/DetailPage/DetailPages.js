@@ -2,7 +2,7 @@ import React, { useEffect, useState} from "react";
 import { useParams } from "react-router-dom"
 import { https } from "../../service/api";
 import { Rate } from "antd"
-export default function DetailPage() {
+export default function DetailPages() {
     const [detail , setDetail] = useState();
     const [isLoading ,setIsLoading] = useState(false);
 
