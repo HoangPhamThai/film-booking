@@ -12,7 +12,6 @@ export default function ListMovie() {
     https
       .get(getListFilm)
       .then((res) => {
-        console.log(res);
         setMovieArr(res.data.content);
         // card atnd
       })
@@ -20,7 +19,7 @@ export default function ListMovie() {
         console.log(err);
       });
   }, []);
-  
+
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-5">
       {movieArr.slice(0, 20).map((item) => {
@@ -31,7 +30,13 @@ export default function ListMovie() {
             style={{
               width: "100%",
             }}
-            cover={<img className="h-64 object-cover" alt="example" src={item.hinhAnh} />}
+            cover={
+              <img
+                className="h-64 object-cover"
+                alt="example"
+                src={item.hinhAnh}
+              />
+            }
           >
             <Tooltip title={item.tenPhim}>
               <Meta title={item.tenPhim} />

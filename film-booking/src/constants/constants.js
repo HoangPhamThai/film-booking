@@ -6,4 +6,4 @@ export const routePath = {
     login: '/login',
 }
 
-
+export const pricePerSeat = 180000

@@ -5,7 +5,7 @@ import Header from "../components/header";
 
 export default function HomeTemplate() {
   return (
-    <div>
+    <div className="bg-slate-700">
       <Header />
       <Outlet />
       <Footer />
